@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  rust:
+    build:
+      context: .
+      dockerfile: rust.dockerfile
+      args:
+        - USER=${USER}
+    volumes:
+      - ./projects:/home/rust/projects
+    environment:
+      - USER=${USER}
